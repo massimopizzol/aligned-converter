@@ -1,0 +1,22 @@
+﻿Activity database,Activity code,Activity name,Activity unit,Activity type,Exchange database,Exchange input,Exchange amount,Exchange unit,Exchange type,Exchange uncertainty type,Exchange loc,Exchange scale,Exchange negative,Simapro name,Simapro unit,Simapro type
+dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,Process A,kilogram,process,dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,1,kilogram,production,,,,,Process A,kg,
+dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,Process A,kilogram,process,dummy-lci,e76425d6-ad7f-4d46-9ad3-3fcad95304fa,10,cubic meter,technosphere,2,1,1.01,False,Process C,m3,
+dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,Process A,kilogram,process,ecoinvent 3.9 conseq,f4dc7d2b1d70e6c0f929ec5231c085e0,4,kilowatt hour,technosphere,2,1,1.01,False,"Electricity, medium voltage {DK}| market for electricity, medium voltage | Conseq, U",kWh,
+dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,Process A,kilogram,process,ecoinvent 3.9 conseq,f2846d746b70a0b5e4a7c91b0a8463e7,7,kilogram,technosphere,,,,,"Barley grain, feed {GLO}| market for barley grain, feed | Conseq, U",kg,
+dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,Process A,kilogram,process,biosphere3,478e8437-1c21-4032-8438-872a6b5ddcdf,9,kilogram,biosphere,,,,,"Water, groundwater consumption",kg,Raw
+dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,Process A,kilogram,process,biosphere3,12d6029e-3801-42ee-a1bc-1ebf936884fc,12,kilogram,biosphere,,,,,Cadmium,kg,Soil
+dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,Process A,kilogram,process,dummy-lci,841e111d-9eb8-4800-8503-ad7cf12c7ca9,15,EUR2003,biosphere,,,,,Value added,EUR2003,Economic
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,1,piece,production,,,,,Process B,p,
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,dummy-lci,89537cc9-2e7e-4304-ac2b-1ba8e89f2aa6,1,kilogram,technosphere,,,,,Process A,kg,
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,dummy-lci,e76425d6-ad7f-4d46-9ad3-3fcad95304fa,3,cubic meter,technosphere,,,,,Process C,m3,
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,ecoinvent 3.9 conseq,f4dc7d2b1d70e6c0f929ec5231c085e0,5,kilowatt hour,technosphere,,,,,"Electricity, medium voltage {DK}| market for electricity, medium voltage | Conseq, U",kWh,
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,ecoinvent 3.9 conseq,db6855ad6838970a9d3b02f257d2f225,123,kilometer,technosphere,,,,,"Energy use, electric bicycle {RoW}| energy use and operation emissions, electric bicycle | Conseq, U",km,
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,biosphere3,349b29d1-3e58-4c66-98b9-9d1a076efd2e,10,kilogram,biosphere,,,,,Carbon dioxide,kg,Air
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,biosphere3,a45cd247-3532-4e27-bddc-b519fdb5e08f,13,kilogram,biosphere,,,,,Aluminium waste,kg,Waste
+dummy-lci,eef84f20-c0ef-4e85-94ed-a7b39791ebb7,Process B,piece,process,ecoinvent 3.9 conseq,dd6a431411bdda66ed2d82c95bb2dad4,16,kilogram,technosphere,,,,,"Municipal solid waste {RoW}| market for municipal solid waste | Conseq, U",kg,Wastetotreatment
+dummy-lci,e76425d6-ad7f-4d46-9ad3-3fcad95304fa,Process C,cubic meter,process,dummy-lci,e76425d6-ad7f-4d46-9ad3-3fcad95304fa,1,cubic meter,production,,,,,Process C,m3,
+dummy-lci,e76425d6-ad7f-4d46-9ad3-3fcad95304fa,Process C,cubic meter,process,ecoinvent 3.9 conseq,f4dc7d2b1d70e6c0f929ec5231c085e0,6,kilowatt hour,technosphere,,,,,"Electricity, medium voltage {DK}| market for electricity, medium voltage | Conseq, U",kWh,
+dummy-lci,e76425d6-ad7f-4d46-9ad3-3fcad95304fa,Process C,cubic meter,process,biosphere3,31c4d160-b21e-41b3-b9c1-3d7a72377653,11,kilogram,biosphere,,,,,Lead,kg,Water
+dummy-lci,e76425d6-ad7f-4d46-9ad3-3fcad95304fa,Process C,cubic meter,process,dummy-lci,4b52d5a3-8b25-427a-9199-e5c875ce9ec8,14,piece,biosphere,,,,,"Injuries, fatal",p,Social
+dummy-lci,841e111d-9eb8-4800-8503-ad7cf12c7ca9,Value Added,EUR2003,biosphere,,,,,,,,,,,,
+dummy-lci,4b52d5a3-8b25-427a-9199-e5c875ce9ec8,"Injuries, fatal",piece,biosphere,,,,,,,,,,,,
