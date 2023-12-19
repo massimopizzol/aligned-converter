@@ -1,4 +1,8 @@
-# Life Cycle Inventory data converters and importers for Simapro and Brightway2 LCA software
+# Readme
+
+## aligned-converter
+
+Life Cycle Inventory data converters and importers for Simapro and Brightway2 LCA software
 
 Python scripts to convert foreground life cycle inventory data in **tabular format** into a format that can be imported in LCA software SimaPro and Brightway2.
 Links between foreground and background datasets and all types of exchanges can be specified.
@@ -98,9 +102,9 @@ The foreground system has to be correctly structured before the import succeeds.
 These converters have been designed for importing foreground data of limited size. They will work for relatively large systems (hundreds to thousands of exchanges) but they are not recommended for database-scale data import (tens of thousands of exchanges or more).  
 
 
-# Funding
+## Funding
 
-The convertes were developed within the ALIGNED project, [wwww.alignedproject.eu](wwww.alignedproject.eu) Horizon Europe grant agreement N° 101059430. [^1]
+The work was carried out within the ALIGNED project, [wwww.alignedproject.eu](wwww.alignedproject.eu) Horizon Europe grant agreement N° 101059430. [^1]
 
 
 [^1]: _Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Executive Agency. Neither the European Union nor the granting authority can be held responsible for them._
