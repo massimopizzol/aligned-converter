@@ -21,6 +21,30 @@ Requirements:
 * csv library
 * Tested with python v.3.11, might work with lower python 3 versions too. 
 
+## Column names
+
+Important, **do not change column names** in the template. The LCI table must have these column with these exact names:
+
+Activity database
+Activity code	
+Activity name	
+Activity unit	
+Activity type	
+Exchange database	
+Exchange input	
+Exchange amount
+Exchange unit	
+Exchange type	
+Exchange uncertainty type	
+Exchange loc	
+Exchange scale	
+Exchange negative	
+Simapro name	
+Simapro unit	
+Simapro type
+
+For import into brightway the last seven columns are not mandatory. For import into Simapro brighway codes are not needed. Additional columns can be added if needed.
+  
 
 ## Import to SimaPro
 
