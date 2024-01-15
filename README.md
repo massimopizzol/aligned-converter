@@ -25,25 +25,25 @@ Requirements:
 
 Important, **do not change column names** in the template. The LCI table must have these column with these exact names:
 
-Activity database
-Activity code	
-Activity name	
-Activity unit	
-Activity type	
-Exchange database	
-Exchange input	
-Exchange amount
-Exchange unit	
-Exchange type	
-Exchange uncertainty type	
-Exchange loc	
-Exchange scale	
-Exchange negative	
-Simapro name	
-Simapro unit	
+Activity database;
+Activity code;	
+Activity name;
+Activity unit;	
+Activity type;	
+Exchange database;	
+Exchange input;	
+Exchange amount;
+Exchange unit;	
+Exchange type;	
+Exchange uncertainty type;	
+Exchange loc;	
+Exchange scale;	
+Exchange negative;	
+Simapro name;	
+Simapro unit;	
 Simapro type
 
-For import into brightway the last seven columns are not mandatory. For import into Simapro brighway codes are not needed. Additional columns can be added if needed.
+For import into Brightway2, the last seven columns are not mandatory. For import into Simapro, Brighway2 exchange codes are not needed. Additional columns can be added if needed (e.g., a column named "notes" or "additional information").
   
 
 ## Import to SimaPro
@@ -51,9 +51,10 @@ For import into brightway the last seven columns are not mandatory. For import i
 Prepare the life cycle inventory in Excel. 
 Save it in .csv format in the same folder as the Python script `lci_to_sp.py` 
 
-* Use exact dataset names to link with a selected background database. 
-* Use "Raw", "Air", "Water", "Soil", "Waste", "Social", "Economic"  to indicate exchanges
-* Use "Wastetotreatment" to indicate database processes of the waste treatment category
+* In the LCI table, fill in the mandatory columns. Note that for import into Simapro brighway codes (values for the "Exchange input" column) are not needed. 
+* Use exact dataset names in the "Simapro name" column to link with any specific foreground or background activity. 
+* In the "Simapro type" column use "Raw", "Air", "Water", "Soil", "Waste", "Social", "Economic" to indicate exchanges
+* In the "Simapro type" column use "Wastetotreatment" to indicate database processes of the waste treatment category
 * Uncertainty, sub-compartment of emission (e.g. "high-population"), and comments can not be included (they can be specified directly in the converted .csv file though)
 
 
@@ -86,8 +87,9 @@ From SimaPro, use Import>File and the following settings:
 Prepare the life cycle inventory in Excel. 
 Save it in .csv format in the same folder as the Python script `lci_to_bw2.py`
 
-* Use exact dataset codes to link with background system
-* Use "technosphere", "production", "biosphere", etc. to indicate various types of exchanges. See brightway docs for more info. 
+* For import into Brightway2, the last seven columns are not strictly mandatory. However, it is recommended to include uncertainty and simapro codes for reference under column "Simapro name".
+* In the column "Exchange input"	use exact dataset codes to link with other foreground or background activities
+* In the column "Exchange type" use "technosphere", "production", "biosphere", or "substitution". to indicate various types of exchanges. See brightway docs for more info. 
 
 To run the converter one needs to open a bw project **that includes the needed biosphere and background databases** ([see tutorial for importing biosphere3 and ecoinvent here](https://github.com/massimopizzol/advanced-lca-notebooks/blob/main/Course-material/3-Ecoinvent.ipynb)).
 
