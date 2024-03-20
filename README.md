@@ -9,9 +9,9 @@ Links between foreground and background datasets and all types of exchanges can 
 
 * `lci_to_sp.py` converts from .csv file in tabular format to Simapro CSV. See also [Simapro-CSV-converter](https://github.com/massimopizzol/Simapro-CSV-converter) for a previous version that uses another excel template.
  
-* `lci_to_bw2.py` converts from .csv file in tabular format to a dictionary taht can be written as a brightway dataase
+* `lci_to_bw2.py` converts from .csv file in tabular format to a dictionary that can be written as a Brightway2 database
 
-For detailed info about the tabular format of the LCI data see the [aligned-datapackage repository](https://github.com/massimopizzol/aligned-datapackage) and this [zenodo archive](xxx).
+For detailed info about the tabular format of the LCI data see the [aligned-datapackage repository](https://github.com/massimopizzol/aligned-datapackage) and this [ALIGNED T1.2 LCI data template zenodo archive](https://doi.org/10.5281/zenodo.10843472).
 
 
 Requirements:
@@ -23,27 +23,11 @@ Requirements:
 
 ## Column names
 
-Important, **do not change column names** in the template. The LCI table must have these column with these exact names:
+Important, **do not change column names** in the template. The LCI table must have these columns with these exact names:
 
-Activity database;
-Activity code;	
-Activity name;
-Activity unit;	
-Activity type;	
-Exchange database;	
-Exchange input;	
-Exchange amount;
-Exchange unit;	
-Exchange type;	
-Exchange uncertainty type;	
-Exchange loc;	
-Exchange scale;	
-Exchange negative;	
-Simapro name;	
-Simapro unit;	
-Simapro type
+_Activity database;Activity code;Activity name;Activity unit;Activity type;Exchange database;Exchange input;Exchange amount;Exchange unit;Exchange type;Exchange uncertainty type;Exchange loc;Exchange scale;Exchange negative;Simapro name;Simapro unit;Simapro type_
 
-For import into Brightway2, the last seven columns are not mandatory. For import into Simapro, Brighway2 exchange codes are not needed. Additional columns can be added if needed (e.g., a column named "notes" or "additional information").
+For import into Brightway2, the last seven columns are not mandatory. For import into Simapro, Brighway2 exchange codes are not needed. Additional columns can be added if needed (e.g., a column named "Notes" or "Additional information" or "Other").
   
 
 ## Import to SimaPro
@@ -53,8 +37,8 @@ Save it in .csv format in the same folder as the Python script `lci_to_sp.py`
 
 * In the LCI table, fill in the mandatory columns. Note that for import into Simapro brighway codes (values for the "Exchange input" column) are not needed. 
 * Use exact dataset names in the "Simapro name" column to link with any specific foreground or background activity. 
-* In the "Simapro type" column use "Raw", "Air", "Water", "Soil", "Waste", "Social", "Economic" to indicate exchanges
-* In the "Simapro type" column use "Wastetotreatment" to indicate database processes of the waste treatment category
+* In the _Simapro type_ column use "Raw", "Air", "Water", "Soil", "Waste", "Social", "Economic" to indicate exchanges
+* In the _Simapro type_ column use "Wastetotreatment" to indicate database processes of the waste treatment category
 * Uncertainty, sub-compartment of emission (e.g. "high-population"), and comments can not be included (they can be specified directly in the converted .csv file though)
 
 
@@ -82,16 +66,16 @@ From SimaPro, use Import>File and the following settings:
 * Other options: "Replace existing processes..."
 
 
-## Import to Brighway2
+## Import to Brightway2
 
 Prepare the life cycle inventory in Excel. 
 Save it in .csv format in the same folder as the Python script `lci_to_bw2.py`
 
-* For import into Brightway2, the last seven columns are not strictly mandatory. However, it is recommended to include uncertainty and simapro codes for reference under column "Simapro name".
-* In the column "Exchange input"	use exact dataset codes to link with other foreground or background activities
-* In the column "Exchange type" use "technosphere", "production", "biosphere", or "substitution". to indicate various types of exchanges. See brightway docs for more info. 
+* For import into Brightway2, the last seven columns are not strictly mandatory. However, it is recommended to include uncertainty and SimaPro codes for reference under column _Simapro name_.
+* In the column _Exchange input_	use exact dataset codes to link with other foreground or background activities
+* In the column _Exchange type_ use "technosphere", "production", "biosphere", or "substitution". to indicate various types of exchanges. See Brightway2 docs for more info. 
 
-To run the converter one needs to open a bw project **that includes the needed biosphere and background databases** ([see tutorial for importing biosphere3 and ecoinvent here](https://github.com/massimopizzol/advanced-lca-notebooks/blob/main/Course-material/3-Ecoinvent.ipynb)).
+To run the converter one needs to open a Brightway2 project **that includes the needed biosphere database and background databases** ([see tutorial for importing biosphere3 and ecoinvent here](https://github.com/massimopizzol/advanced-lca-notebooks/blob/main/Course-material/3-Ecoinvent.ipynb)).
 
 Within this project, run the conversion script as in the example below:
 
@@ -112,7 +96,7 @@ t_db.write(bw2_db)
 
 ## Worked examples
 
-The files `dummy-lci-table-format.xlsx` and `dummy-lci-table-format.csv` include a fictional LCIs using ecoinvent database, version 3.9.1 consequential system model.
+The files `dummy-lci-table-format.xlsx` and `dummy-lci-table-format.csv` include a fictional LCI using ecoinvent database, version 3.9.1 consequential system model.
 
 **They can be used as template** and to test the import to software. 
 
@@ -128,9 +112,12 @@ The foreground system has to be correctly structured before the import succeeds.
 These converters have been designed for importing foreground data of limited size. They will work for relatively large systems (hundreds to thousands of exchanges) but they are not recommended for database-scale data import (tens of thousands of exchanges or more).  
 
 
+## Contact & info
+
+[Massimo Pizzol](mailto:massimo@plan.aau.dk)
+
 ## Funding
 
-The work was carried out within the ALIGNED project, [wwww.alignedproject.eu](wwww.alignedproject.eu) Horizon Europe grant agreement N° 101059430. [^1]
-
+This work was carried out within Work Package 1: Shared modelling framework and learnings, Task 1.2: Framework for foreground life cycle inventory of bio-based sectors, of the ALIGNED project [wwww.alignedproject.eu](wwww.alignedproject.eu), Horizon Europe grant agreement N° 101059430 [^1].
 
 [^1]: _Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Executive Agency. Neither the European Union nor the granting authority can be held responsible for them._
