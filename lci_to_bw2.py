@@ -9,11 +9,15 @@ Created on Thu Aug 31 15:21:32 2017
 
 import pandas as pd
 import numpy as np
+from validate_csv import *
 
 def lci_to_bw2(df):
     '''A function to convert a pandas Dataframe to a dictionary
     to be converted in a database in bw2'''
+    df = df.dropna(how="all") # delete all empty rows
     
+    validate_df(df) # validate csv file meets the requirements
+
     act_cols = ['Activity database','Activity code','Activity name','Activity unit','Activity type',
                 'Exchange database','Exchange input','Exchange amount','Exchange unit','Exchange type'] # fields that need to be in the right order
     other_cols = [col for col in df.columns if col not in act_cols]
@@ -51,24 +55,26 @@ def lci_to_bw2(df):
     for act in mydb['Activity code'].unique():
     
         sel = mydb[mydb['Activity code'] == act] # select each unique ID (each of them is an activity)
-        db_key = (list(sel['Activity database'])[0], list(sel['Activity code'])[0])
-        db_keys.append(db_key)
-        
-        if list(sel['Activity type'].unique())[0] == 'biosphere':
-                    
-            my_bio_data = list(sel.iloc[0,2:5].values)
-            db_value = bio_to_dict(my_bio_data)
-            db_values.append(db_value)
-        
-        else:
-            my_exc = []
-            for i in range(sel.shape[0]):
-                exc_to_dict(sel.iloc[i,5:],my_exc)
+
+        if list(sel['Activity database']) and list(sel['Activity code']):
+            db_key = (list(sel['Activity database'])[0], list(sel['Activity code'])[0])
+            db_keys.append(db_key)
             
-            my_act_data = list(sel.iloc[0,2:5].values) + [my_exc]
-            db_value = act_to_dict(my_act_data)
-            db_values.append(db_value)
-        
+            if list(sel['Activity type'].unique())[0] == 'biosphere':
+                        
+                my_bio_data = list(sel.iloc[0,2:5].values)
+                db_value = bio_to_dict(my_bio_data)
+                db_values.append(db_value)
+            
+            else:
+                my_exc = []
+                for i in range(sel.shape[0]):
+                    exc_to_dict(sel.iloc[i,5:],my_exc)
+                
+                my_act_data = list(sel.iloc[0,2:5].values) + [my_exc]
+                db_value = act_to_dict(my_act_data)
+                db_values.append(db_value)
+            
      
     bw2_db = dict(zip(db_keys, db_values))
     
