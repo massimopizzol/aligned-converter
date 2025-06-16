@@ -16,7 +16,12 @@ def lci_to_bw2(df):
     to be converted in a database in bw2'''
     df = df.dropna(how="all") # delete all empty rows
     
-    validate_df(df) # validate csv file meets the requirements
+    # validate the df
+    try:
+        validate_df(df) 
+    except ValueError as e:
+        print(f"Validation failed: \n {e}")
+        return
 
     act_cols = ['Activity database','Activity code','Activity name','Activity unit','Activity type',
                 'Exchange database','Exchange input','Exchange amount','Exchange unit','Exchange type'] # fields that need to be in the right order
