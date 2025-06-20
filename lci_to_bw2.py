@@ -6,10 +6,8 @@ Created on Thu Aug 31 15:21:32 2017
 @author: massimo
 """
 
-
 import pandas as pd
 import numpy as np
-from validate_csv import *
 
 
 def validate_df(df):
